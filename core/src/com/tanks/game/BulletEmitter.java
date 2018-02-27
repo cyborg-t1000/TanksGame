@@ -19,6 +19,15 @@ public class BulletEmitter {
         }
     }
 
+    public boolean empty() {
+        for (int i = 0; i < bullets.length; i++) {
+            if (bullets[i].isActive()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public void render(SpriteBatch batch) {
         for (int i = 0; i < bullets.length; i++) {
             if (bullets[i].isActive()) {
